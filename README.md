@@ -40,3 +40,7 @@ In the front-end I set up an app.js component with a hello-world tag to check it
 I now think of use cases, UI-UX and visualize how the app will look and what React Components I require for the front-end and what I require for the back-end data.
 This phase is a planning an reflective phase, which if I am working in a group the key things I establish are group goals, group tasks, task-allocation, definition of done, structure of git-hub files, git-master and who resolves file confilicts - processes-procedures.
 
+### Branch 1 feature/nav-bar
+
+Initial styling and set up of this component - I like to choose fonts, colors, look and feel - images or anything that makes the app stand out from a ux point of view and is easy to navigate from a ui point of view. I like Pixabay for student projects [https://pixabay.com/] this image credit goes to Prawny from Pixabya
+

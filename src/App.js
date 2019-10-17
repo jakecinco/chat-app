@@ -4,8 +4,8 @@ import NavComponent from './front-end/common/nav';
 
 function App() {
 	return (
-		<div className="App">
-			<h1>I will be a chat-app when I grow up</h1>
+		<div className="just-chat-app">
+			<h1 className="f1 link dim bg-light-blue tc yellow underline pa3 pointer">JUST CHAT APP</h1>
 			<NavComponent />
 		</div>
 	);
