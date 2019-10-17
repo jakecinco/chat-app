@@ -7,6 +7,7 @@ I like to set up all my project dependencies up front with a check list and ensu
 [npm install tachyons -S] (installs tachyons) A CSS tool-kit for rapid styling (tachy is the Greek word for rapid!) They are responsive based on mobile-first design,  with low-specificity that can be overwritten and excellent documentation [http://tachyons.io/docs/] to experiment with - ideal for quick mock-ups and M
 
 ### Back-end dependencies and libraries
+[npm install node nodemon express request-promise cors dotenv -S]
 1. [npm install node -S]  (adds node.js)
 2. [npm install nodemon -S] (adds hot loading of backend server with nodemon)
 3. [npm install express -S] (install express midware - ajax and body-parser inbuilt)
