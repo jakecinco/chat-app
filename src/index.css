@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	font-family: 'Liu Jian Mao Cao', cursive;
-	background: url("./front-end/app-pages/background-cover.jpg");
+	background: url("./front-end/assets/background-cover.jpg");
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

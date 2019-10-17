@@ -5,6 +5,7 @@ I like to set up all my project dependencies up front with a check list and ensu
 ### Front-end libraries
 [npx create-react-app]
 [npm install tachyons -S] (installs tachyons) A CSS tool-kit for rapid styling (tachy is the Greek word for rapid!) They are responsive based on mobile-first design,  with low-specificity that can be overwritten and excellent documentation [http://tachyons.io/docs/] to experiment with - ideal for quick mock-ups and M
+[npm install --save react-tilt] allows you to create images to hover and tilt aroundß 
 
 ### Back-end dependencies and libraries
 [npm install node nodemon express request-promise cors dotenv -S]

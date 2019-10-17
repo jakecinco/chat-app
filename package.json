@@ -11,6 +11,7 @@
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2",
 		"react-scripts": "3.2.0",
+		"react-tilt": "^0.1.4",
 		"request-promise": "^4.2.4",
 		"tachyons": "^4.11.1"
 	},
