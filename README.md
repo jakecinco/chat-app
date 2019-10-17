@@ -15,8 +15,9 @@ I like to set up all my project dependencies up front with a check list and ensu
 5. [npm install cors] enables cross-origin-resource-sharing, prevents resource blocking
 6. [npm install dotenv] enables saving of passwords, files with keys for access
 
-Connect back-end and front-end
+### Connect back-end and front-end
 [npm install npm-run-all]
+Unless I want to deploy the app - at which stage the package JSOn files and an [npm-run-build] are required I do not set up a proxy server or static files.
 
 ## Set up file structure
 
@@ -30,5 +31,12 @@ const port = 3000;
 
 app.listen(port, () => console.log(`chat-app listening on ${port}`));
 ```
+I test to see if this is working. [npm run start-backend]
 
-In the front-end I set up an app.js component with a hello-world tag to check it is is complining, I also add hello world to components in the common folder after that.
+In the front-end I set up an app.js component with a hello-world tag to check it is is complining, I also add hello world to components in the common folder after that. I test to see if this is working [npm run start]
+
+### Setting up project structure
+
+I now think of use cases, UI-UX and visualize how the app will look and what React Components I require for the front-end and what I require for the back-end data.
+This phase is a planning an reflective phase, which if I am working in a group the key things I establish are group goals, group tasks, task-allocation, definition of done, structure of git-hub files, git-master and who resolves file confilicts - processes-procedures.
+
