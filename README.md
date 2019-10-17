@@ -43,5 +43,8 @@ This phase is a planning an reflective phase, which if I am working in a group t
 
 ### Branch 1 feature/nav-bar
 
-Initial styling and set up of this component - I like to choose fonts, colors, look and feel - images or anything that makes the app stand out from a ux point of view and is easy to navigate from a ui point of view. I like Pixabay for student projects [https://pixabay.com/] this image credit goes to Prawny from Pixabya
+Initial styling and set up of this component - I like to choose fonts, colors, look and feel - images or anything that makes the app stand out from a ux point of view and is easy to navigate from a ui point of view. I like Pixabay for student projects [https://pixabay.com/] this image credit goes to Prawny from Pixabay, the logo icon is from fontawesome.
+
+This quickly sets up the look and feel with some light Tachyon styling and React Tilt, for animation in React.
+
 

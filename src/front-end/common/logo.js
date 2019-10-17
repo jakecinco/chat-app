@@ -1,6 +1,5 @@
 import React from 'react';
 import Tilt from 'react-tilt';
-// import chatLogo from '../front-end/assets/background-cover.jpg';
 
 const LogoComponent = () => {
 	return (
