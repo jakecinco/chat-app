@@ -39,6 +39,26 @@ I test to see if this is working. [npm run start-backend]
 
 In the front-end I set up an app.js component with a hello-world tag to check it is is complining, I also add hello world to components in the common folder after that. I test to see if this is working [npm run start]
 
+Later, if we are bringing in data from the back end package JSOn files change to 
+```
+[npm run build]
+Modify scripts  
+    "scripts": {
+    "start": "npm-run-all -s build start-backend",
+    "start-frontend": "react-scripts start",
+    "start-backend": "nodemon src/back-end/app.js",
+    "start-dev": "npm-run-all -p start-frontend start-backend",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+Add proxy just above es lint and below scripts
+ "proxy": "http://localhost:3001",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+```
+To add a proxy server
 ### Setting up project structure
 
 I now think of use cases, UI-UX and visualize how the app will look and what React Components I require for the front-end and what I require for the back-end data.
@@ -48,6 +68,6 @@ This phase is a planning an reflective phase, which if I am working in a group t
 
 Initial styling and set up of this component - I like to choose fonts, colors, look and feel - images or anything that makes the app stand out from a ux point of view and is easy to navigate from a ui point of view. I like Pixabay for student projects [https://pixabay.com/] this image credit goes to Prawny from Pixabay, the logo icon is from fontawesome.
 
-This quickly sets up the look and feel with some light Tachyon styling and React Tilt, for animation in React.
+This quickly sets up the look and feel with some light Tachyon styling and React Tilt, for animation in React. Some cool backgrounds can be found at [lea.verou.me/css3patterns]
 
 
