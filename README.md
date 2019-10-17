@@ -1,3 +1,6 @@
+## Just Chat App
+![Just-Chat-Appp](src/front-end/assets/app-screenshot.png)
+
 ## Scaffolding
 
 I like to set up all my project dependencies up front with a check list and ensure the back-end and front-end are connected. I do this in the master branch and then run branches for development of features, bug fixes, etc.
