@@ -54,7 +54,60 @@ Components created
 - Submit & Send Button
 
 
-### Task2 work on ui-ux and product features
+### Task2 add sign-in and sign-out functionality
+
+Refactoring
+- Home Page
+- Nav Bar
+- App.js
+- Submit & Send Button
+- Created loginComponent - a form for sign-in
+
+- Home now has a form for sign in and register
+- The Navbar now has the logo and signout, sign-in and register incorporated in form
+- App.js changed from a functional component - state introduced
+- Submit & Send Button removed, incorporated into form
+
+Page functionality - state route set as 'signInForm'
+On Route Change function created to set state to the object route 
+
+```
+	onRouteChange = (route) => {
+		this.setState({ route: route });
+	};
+```
+
+conditional rendering of components that we want on sign-in and sign-out
+
+```
+render() {
+		return (
+			<div className="just-chat-app">
+				<NavComponent onRouteChange={this.onRouteChange} />
+
+				{this.state.route === 'signinForm' ? (
+					<div>
+						<AboutPage onRouteChange={this.onRouteChange} />
+						<LoginComponent onRouteChange={this.onRouteChange} />
+					</div>
+				) : (
+					<div>
+						<InputMessageForm />
+					</div>
+				)}
+			</div>
+		);
+	}
+}
+
+```
+
+Child components passed the props ```onRouteChange``` to the form component, so that when the user clicks the submit login-details email and password, the route changes to user logged in ```onClick={() => onRouteChange('userloggedin')}```
+
+The user is now logged-in and when they want to log-out they are taken back to the sign-in page with the prop ```onRouteChange``` passed as an onclick event handler ```onClick={() => onRouteChange('signinForm')}``` to return to the sign-in form.
+
+
+### Task3 work data-calls from the back-end
 
 Decisions to make - use an API like Twilio or build from scratch with websockets?
 Two-way or multi-way communications
@@ -62,9 +115,6 @@ Display information behind log-in - input field styling and response field styli
 Data - build a data-base, use API data, use data in Node.js module?
 Sign-in - authentication process JWT or bcrypt?
 User profile - details of how user can create, read, update, delete information on profile - API with jsonPlaceholder? Or db?
-
-### Task3 work data-calls from the back-end
-
 If we are bringing in data from the back end and deploy the app we need to set up a proxy-server, if we are going to build a data-base select db - MongoDb, SQL?
 
 ```
