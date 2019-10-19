@@ -3,7 +3,7 @@ import SubmitButton from '../common/submitButton.js';
 
 const InputMessageForm = (properties) => {
 	return (
-		<div className="message-container">
+		<div className=" form pa4 ma2">
 			<input
 				name="message-input-field"
 				type="text"

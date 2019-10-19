@@ -1,18 +1,19 @@
 import React from 'react';
+import LogoComponent from './logo';
 
 const NavComponent = () => {
 	return (
 		<nav
-			className="nav bg-light-blue"
+			className="bg-light-blue"
 			style={{
 				display: 'flex',
-				justifyContent: 'flex-end'
+				justifyContent: 'space-between',
+				alignItems: 'center'
 			}}
 		>
-			<p className="f2 link bg-light-blue dim red underline pa3 pointer">Sign-Out</p>
-			<hr />
-			<p className="f2 link dim bg-light-blue dark-blue underline pa3 pointer">Log-In</p>
-			<p className="f2 link dim bg-light-blue dark-green pa3 underline pointer">Register</p>
+			<LogoComponent />
+			<p className="f2 link dim dark-blue underline pointer">Sign-In</p>
+			<p className="f2 link dim bg-light-blue red underline ma1 pointer">Log-Out</p>
 		</nav>
 	);
 };
