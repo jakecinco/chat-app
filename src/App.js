@@ -3,6 +3,7 @@ import './App.css';
 import NavComponent from './front-end/common/nav';
 import LogoComponent from './front-end/common/logo';
 import AboutPage from './front-end/common/aboutPage';
+import InputMessageForm from './front-end/app-pages/messageForm';
 
 function App() {
 	return (
@@ -10,6 +11,7 @@ function App() {
 			<AboutPage />
 			<LogoComponent />
 			<NavComponent />
+			<InputMessageForm />
 		</div>
 	);
 }
