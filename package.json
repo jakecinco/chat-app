@@ -13,15 +13,19 @@
 		"react-scripts": "3.2.0",
 		"react-tilt": "^0.1.4",
 		"request-promise": "^4.2.4",
+		"run-all": "^1.0.1",
 		"tachyons": "^4.11.1"
 	},
 	"scripts": {
-		"start": "react-scripts start",
+		"start": "npm-run-all -s build start-backend",
+		"start-frontend": "react-scripts start",
 		"start-backend": "nodemon src/backend/server.js",
+		"start-dev": "npm-run-all -p start-frontend start-backend",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
+	"proxy": "http://localhost:3001",
 	"eslintConfig": {
 		"extends": "react-app"
 	},
