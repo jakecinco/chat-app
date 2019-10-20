@@ -10,10 +10,16 @@ export default class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			route: 'signinForm'
+			route: 'signinForm',
+			isSignedIn: false
 		};
 	}
 	onRouteChange = (route) => {
+		if (route === 'signout') {
+			this.setState({ isSignedIn: false });
+		} else if (route === 'userloggedin') {
+			this.setState({ isSignedIn: true });
+		}
 		this.setState({ route: route });
 	};
 
@@ -21,7 +27,7 @@ export default class App extends Component {
 		const { route } = this.state;
 		return (
 			<div className="just-chat-app">
-				<NavComponent onRouteChange={this.onRouteChange} />
+				<NavComponent isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange} />
 				{route === 'userloggedin' ? (
 					<InputMessageForm />
 				) : route === 'signinForm' ? (
