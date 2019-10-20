@@ -1,4 +1,4 @@
-module.exports = function getUserData(users) {
+module.exports = function getUserData() {
 	return [
 		{
 			name: 'Aaron',

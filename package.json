@@ -8,6 +8,7 @@
 		"express": "^4.17.1",
 		"node": "^12.12.0",
 		"nodemon": "^1.19.4",
+		"npm-run-all": "^1.0.1",
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2",
 		"react-scripts": "3.2.0",
@@ -17,10 +18,8 @@
 		"tachyons": "^4.11.1"
 	},
 	"scripts": {
-		"start": "npm-run-all -s build start-backend",
 		"start-frontend": "react-scripts start",
 		"start-backend": "nodemon src/backend/server.js",
-		"start-dev": "npm-run-all -p start-frontend start-backend",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
