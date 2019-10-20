@@ -1,11 +1,11 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3001;
 const path = require('path');
 
-app.use(bodyParser.json);
+// app.use(bodyParser.json);
 
 const chatAppUsers = require('./api-chatData/userData');
 app.get('/', (req, res) => {
