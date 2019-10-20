@@ -172,6 +172,89 @@ render() {
 }
 ```
 
+### Task4 removes signout from nav when on home page
+
+Add a new state ```isSignedIn:false```
+
+```
+export default class App extends Component {
+	constructor() {
+		super();
+		this.state = {
+			route: 'signinForm',
+			isSignedIn: false
+		};
+	}
+```
+
+Set state to true in the route handling function
+
+```
+	onRouteChange = (route) => {
+		if (route === 'signout') {
+			this.setState({ isSignedIn: false });
+		} else if (route === 'userloggedin') {
+			this.setState({ isSignedIn: true });
+		}
+		this.setState({ route: route });
+	};
+```	
+pass the changed state into the render function of the nav bar
+
+```
+<NavComponent isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange} />
+
+```
+
+pass the prop of ```isSignedIn``` from App.js into the Nav component and run a conditional render
+
+```
+import React from 'react';
+import LogoComponent from './logo';
+
+const NavComponent = ({ onRouteChange, isSignedIn }) => {
+	if (isSignedIn) {
+		return (
+			<div>
+				<nav
+					className="bg-light-blue"
+					style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+						alignItems: 'center'
+					}}
+				>
+					<LogoComponent />
+					<p
+						onClick={() => onRouteChange('signinForm')}
+						className="f2 link dim bg-light-blue red underline ma1 pointer"
+					>
+						Sign-Out
+					</p>
+				</nav>
+			</div>
+		);
+	} else {
+		return (
+			<div>
+				<nav
+					className="bg-light-blue"
+					style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+						alignItems: 'center'
+					}}
+				>
+					<LogoComponent />
+				</nav>
+			</div>
+		);
+	}
+};
+
+export default NavComponent;
+```
+
 ### Task4 testing Twilio REST-API
 
 Decisions to make 
