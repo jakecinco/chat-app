@@ -3,8 +3,9 @@ const app = express();
 const port = 3001;
 const path = require('path');
 
-// const getUserData = require('./src/api-chatData/userData');
-// app.get('/api/sign-in', (req, res) => res.send(getUserData()));
+app.get('/', (req, res) => {
+	res.send('chat app is working');
+});
 
 app.use(express.static(path.join(__dirname, '../../build')));
 app.get('*', function(req, res) {
