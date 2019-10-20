@@ -1,14 +1,21 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
 const port = 3001;
 const path = require('path');
 
+app.use(bodyParser.json);
+
+const chatAppUsers = require('./api-chatData/userData');
 app.get('/', (req, res) => {
 	res.send('chat app is working');
 });
 
+app.get('/users', (req, res) => res.send(chatAppUsers()));
+
 app.post('/signin', (req, res) => {
-	res.json('this is the chat app sign in route');
+	res.json('chat app has successfully posted data');
 });
 
 app.use(express.static(path.join(__dirname, '../../build')));
