@@ -2,11 +2,11 @@ import React from 'react';
 const LoginComponent = ({ onRouteChange }) => {
 	return (
 		<div className="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
-			<p className="f2 dark-blue underline">Sign-In</p>
+			<p className="f2 white bg-blue pa3 br3">Sign in for registered users</p>
 			<form>
 				<fieldset id="sign_up" className="ba b--transparent ph0 mh0" />
 				<div className="mt3">
-					<label className="db fw6 lh-copy f3" for="email-address">
+					<label className="db fw6 lh-copy f3" HTMLfor="email-address">
 						Email
 					</label>
 					<input
@@ -17,7 +17,7 @@ const LoginComponent = ({ onRouteChange }) => {
 					/>
 				</div>
 				<div className="mv3">
-					<label className="db fw6 br3 lh-copy f3" for="password">
+					<label className="db fw6 br3 lh-copy f3" HTMLfor="password">
 						Password
 					</label>
 					<input
@@ -31,16 +31,17 @@ const LoginComponent = ({ onRouteChange }) => {
 					<input
 						onClick={() => onRouteChange('userloggedin')}
 						className="b ph3 pv2 input-reset ba b--dark-blue br3 bg-transparent grow pointer f3 dib shadow-5 bg-yellow"
-						type="submit"
+						type="submit-user"
 						value="Sign in"
 					/>
 				</div>
 				<div class="lh-copy mt3">
 					<a
+						onClick={() => onRouteChange('register')}
 						href="#0"
-						className="f3 bg-light-blue link hover-bg-yellow br3 pa2 ma1 shadow-5 grow dark-blue dib pointer"
+						className="f2 bg-light-blue link hover-bg-yellow br3 pa2 ma1 shadow-5 grow red dib pointer"
 					>
-						Not yet registered? Click here to sign-up!
+						Not Registered? REGISTER HERE!
 					</a>
 				</div>
 			</form>

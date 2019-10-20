@@ -4,6 +4,7 @@ import NavComponent from './front-end/common/nav';
 import AboutPage from './front-end/common/aboutPage';
 import InputMessageForm from './front-end/app-pages/messageForm';
 import LoginComponent from './front-end/app-pages/signIn/loginComponent';
+import RegisterComponent from './front-end/app-pages/signIn/registerationComponent';
 
 export default class App extends Component {
 	constructor() {
@@ -17,19 +18,19 @@ export default class App extends Component {
 	};
 
 	render() {
+		const { route } = this.state;
 		return (
 			<div className="just-chat-app">
 				<NavComponent onRouteChange={this.onRouteChange} />
-
-				{this.state.route === 'signinForm' ? (
+				{route === 'userloggedin' ? (
+					<InputMessageForm />
+				) : route === 'signinForm' ? (
 					<div>
 						<AboutPage onRouteChange={this.onRouteChange} />
 						<LoginComponent onRouteChange={this.onRouteChange} />
 					</div>
 				) : (
-					<div>
-						<InputMessageForm />
-					</div>
+					<RegisterComponent onRouteChange={this.onRouteChange} />
 				)}
 			</div>
 		);
