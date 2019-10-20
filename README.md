@@ -21,18 +21,46 @@ I like to set up all my project dependencies up front with a check list and ensu
 ### Connect back-end and front-end
 [npm install npm-run-all] - Unless I want to deploy the app - at which stage the package JSOn files and an [npm-run-build] are required I do not set up a proxy server or static files, I merely install dependencies.
 
+Just before deploy I will run build and modify the servers to add a proxy server in package JSOn and express
+
+```
+[npm run build]
+Modify scripts
+
+    "scripts": {
+    "start": "npm-run-all -s build start-backend",
+    "start-frontend": "react-scripts start",
+    "start-backend": "nodemon src/back-end/server.js",
+    "start-dev": "npm-run-all -p start-frontend start-backend",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+
+Add proxy just above es lint and below scripts
+
+ "proxy": "http://localhost:3001",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+```
+
 ## Set up file structure
 Compartmentalize the back-end and front-end src files, in the front-end I set up common and app-pages as 2 folders. Common sets up all components that are reusable across multiple pages - nav bars, buttons, search bars, scrolly-bars, etc. The app-pages are purely for the app and all feed into App.js which then feeds into index.js.
 
 The back-end I have server.js to set up the server files with the basic documentation from express
+
 ```
 const express = require('express');
 const app = express();
 const port = 3000;
 
 app.listen(port, () => console.log(`chat-app listening on ${port}`));
+
 ```
-I test to see if this is working. [npm run start-backend] modify scripts file with ``` "start-backend": "nodemon <filepath of server.js>",```
+I test to see if this is working. [npm run start-backend] modify scripts file with 
+
+``` "start-backend": "nodemon <filepath of server.js>",```
 
 In the front-end I set up an app.js component with a hello-world tag to check it is is compiling, I also add hello world to components in the common folder after that. I test to see if this is working [npm run start] Both servers are on port 3000 at this stage and I do not change this until much later.
 
@@ -52,7 +80,6 @@ Components created
 - Navigation
 - Message input
 - Submit & Send Button
-
 
 ### Task2 add sign-in and sign-out functionality
 
@@ -106,35 +133,22 @@ Child components passed the props ```onRouteChange``` to the form component, so 
 
 The user is now logged-in and when they want to log-out they are taken back to the sign-in page with the prop ```onRouteChange``` passed as an onclick event handler ```onClick={() => onRouteChange('signinForm')}``` to return to the sign-in form.
 
+### Task3 testing Twilio REST-API
 
-### Task3 work data-calls from the back-end
+Decisions to make 
 
-Decisions to make - use an API like Twilio or build from scratch with websockets?
-Two-way or multi-way communications
-Display information behind log-in - input field styling and response field styling
-Data - build a data-base, use API data, use data in Node.js module?
-Sign-in - authentication process JWT or bcrypt?
-User profile - details of how user can create, read, update, delete information on profile - API with jsonPlaceholder? Or db?
-If we are bringing in data from the back end and deploy the app we need to set up a proxy-server, if we are going to build a data-base select db - MongoDb, SQL?
+1. Use an API like Twilio?
+To test the Twilio-API install body-parser or axios - axios is a runner that has body-parser inbuilt.
+[npm install body-parser]
+documentation [https://www.npmjs.com/package/body-parser]
 
-```
-[npm run build]
-Modify scripts
+2. Use Websockets? Check options
+3. Use Chat-SDK's like pusher? check options
 
-    "scripts": {
-    "start": "npm-run-all -s build start-backend",
-    "start-frontend": "react-scripts start",
-    "start-backend": "nodemon src/back-end/server.js",
-    "start-dev": "npm-run-all -p start-frontend start-backend",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
 
-Add proxy just above es lint and below scripts
+- What user stories - sms, voice, video 2-way or multi-way chats?
+- Authentication of sign-in -  JWT, Authy or bcrypt?
+- How do we style the logged-in user exprience components based on these decisions?
+- What data do we need to capture and where? - DB? Mongo/ SQL/ Python? based on these decisions?
 
- "proxy": "http://localhost:3001",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-```
+
