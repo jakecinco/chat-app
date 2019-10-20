@@ -81,7 +81,7 @@ Components created
 - Message input
 - Submit & Send Button
 
-### Task2 add sign-in and sign-out functionality
+### Task2 add sign-in and sign-out route changes
 
 Refactoring
 - Home Page
@@ -133,10 +133,48 @@ Child components passed the props ```onRouteChange``` to the form component, so 
 
 The user is now logged-in and when they want to log-out they are taken back to the sign-in page with the prop ```onRouteChange``` passed as an onclick event handler ```onClick={() => onRouteChange('signinForm')}``` to return to the sign-in form.
 
-### Task3 testing Twilio REST-API
+### Task3 add sign-in and registration route changes
+
+- Add another component for registration 
+- In the sign-in app now change the route on the anchor tag route to registration, so that the user goes from the register click to the register page
+```
+	<div class="lh-copy mt3">
+					<a
+						onClick={() => onRouteChange('register')}
+						href="#0"
+						className="f2 bg-light-blue link hover-bg-yellow br3 pa2 ma1 shadow-5 grow red dib pointer"
+					>
+						Not Registered? REGISTER HERE!
+					</a>
+```					
+- In the register component, do the same, change the anchor tag to the sign-in form route
+- Import the registration component into the main app and change the conditional rendering to show the routes from sign-in to registration and from sign-in to user-logged-in routes, deconstruct state on the routing
+
+```
+render() {
+		const { route } = this.state;
+		return (
+			<div className="just-chat-app">
+				<NavComponent onRouteChange={this.onRouteChange} />
+				{route === 'userloggedin' ? (
+					<InputMessageForm />
+				) : route === 'signinForm' ? (
+					<div>
+						<AboutPage onRouteChange={this.onRouteChange} />
+						<LoginComponent onRouteChange={this.onRouteChange} />
+					</div>
+				) : (
+					<RegisterComponent onRouteChange={this.onRouteChange} />
+				)}
+			</div>
+		);
+	}
+}
+```
+
+### Task4 testing Twilio REST-API
 
 Decisions to make 
-
 1. Use an API like Twilio?
 To test the Twilio-API install body-parser or axios - axios is a runner that has body-parser inbuilt.
 [npm install body-parser]
@@ -145,10 +183,7 @@ documentation [https://www.npmjs.com/package/body-parser]
 2. Use Websockets? Check options
 3. Use Chat-SDK's like pusher? check options
 
-
 - What user stories - sms, voice, video 2-way or multi-way chats?
 - Authentication of sign-in -  JWT, Authy or bcrypt?
 - How do we style the logged-in user exprience components based on these decisions?
 - What data do we need to capture and where? - DB? Mongo/ SQL/ Python? based on these decisions?
-
-

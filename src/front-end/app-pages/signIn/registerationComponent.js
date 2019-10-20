@@ -40,21 +40,21 @@ const RegisterComponent = ({ onRouteChange }) => {
 						id="password"
 					/>
 				</div>
-				<div class="">
+				<div className="">
 					<input
 						className="b ph3 pv2 input-reset ba b--dark-blue br3 bg-transparent grow pointer f3 dib shadow-5 bg-pink"
 						type="submit-register"
 						value="Register"
 					/>
 				</div>
-				<div class="lh-copy mt3">
-					<p
+				<div className="lh-copy mt3">
+					<a
 						onClick={() => onRouteChange('signinForm')}
 						href="#0"
 						className="f2 bg-light-blue link hover-bg-light-pink br3 pa2 ma1 shadow-5 grow dark-blue dib pointer"
 					>
 						Registered? Go to Sign-in!
-					</p>
+					</a>
 				</div>
 			</form>
 		</div>

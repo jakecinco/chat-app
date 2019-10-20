@@ -27,7 +27,7 @@ const LoginComponent = ({ onRouteChange }) => {
 						id="password"
 					/>
 				</div>
-				<div class="">
+				<div className="">
 					<input
 						onClick={() => onRouteChange('userloggedin')}
 						className="b ph3 pv2 input-reset ba b--dark-blue br3 bg-transparent grow pointer f3 dib shadow-5 bg-yellow"
@@ -35,7 +35,7 @@ const LoginComponent = ({ onRouteChange }) => {
 						value="Sign in"
 					/>
 				</div>
-				<div class="lh-copy mt3">
+				<div className="lh-copy mt3">
 					<a
 						onClick={() => onRouteChange('register')}
 						href="#0"
