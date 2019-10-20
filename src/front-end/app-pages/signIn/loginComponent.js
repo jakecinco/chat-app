@@ -3,10 +3,10 @@ const LoginComponent = ({ onRouteChange }) => {
 	return (
 		<div className="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
 			<p className="f2 white bg-blue pa3 br3">Sign in for registered users</p>
-			<form>
+			<div>
 				<fieldset id="sign_up" className="ba b--transparent ph0 mh0" />
 				<div className="mt3">
-					<label className="db fw6 lh-copy f3" HTMLfor="email-address">
+					<label className="db fw6 lh-copy f3" htmlFor="email-address">
 						Email
 					</label>
 					<input
@@ -17,7 +17,7 @@ const LoginComponent = ({ onRouteChange }) => {
 					/>
 				</div>
 				<div className="mv3">
-					<label className="db fw6 br3 lh-copy f3" HTMLfor="password">
+					<label className="db fw6 br3 lh-copy f3" htmlFor="password">
 						Password
 					</label>
 					<input
@@ -44,7 +44,7 @@ const LoginComponent = ({ onRouteChange }) => {
 						Not Registered? REGISTER HERE!
 					</a>
 				</div>
-			</form>
+			</div>
 		</div>
 	);
 };

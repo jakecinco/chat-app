@@ -5,10 +5,10 @@ const RegisterComponent = ({ onRouteChange }) => {
 		<div className="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
 			<p className="f2 dark-blue">Welcome to Just Chat App</p>
 			<p className="f2 bg-light-pink pa3 br3">Register to start chatting!</p>
-			<form>
+			<div>
 				<fieldset id="register" className="ba b--transparent ph0 mh0" />
 				<div className="mt3">
-					<label className="db fw6 lh-copy f3" HTMLfor="username">
+					<label className="db fw6 lh-copy f3" htmlFor="username">
 						Name
 					</label>
 					<input
@@ -19,7 +19,7 @@ const RegisterComponent = ({ onRouteChange }) => {
 					/>
 				</div>
 				<div className="mt3">
-					<label className="db fw6 lh-copy f3" HTMLfor="email-address">
+					<label className="db fw6 lh-copy f3" htmlFor="email-address">
 						Email
 					</label>
 					<input
@@ -30,7 +30,7 @@ const RegisterComponent = ({ onRouteChange }) => {
 					/>
 				</div>
 				<div className="mv3">
-					<label className="db fw6 br3 lh-copy f3" HTMLfor="password">
+					<label className="db fw6 br3 lh-copy f3" htmlFor="password">
 						Password
 					</label>
 					<input
@@ -56,7 +56,7 @@ const RegisterComponent = ({ onRouteChange }) => {
 						Registered? Go to Sign-in!
 					</a>
 				</div>
-			</form>
+			</div>
 		</div>
 	);
 };
