@@ -1,4 +1,4 @@
-module.exports = function getChatAppUsers() { 
+module.exports = function getChatAppUsers(users) { 
 	return [
 	{
 		name: 'Aaron',

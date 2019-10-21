@@ -270,3 +270,12 @@ documentation [https://www.npmjs.com/package/body-parser]
 - Authentication of sign-in -  JWT, Authy or bcrypt?
 - How do we style the logged-in user exprience components based on these decisions?
 - What data do we need to capture and where? - DB? Mongo/ SQL/ Python? based on these decisions?
+
+4. Use bcrypt or jwt-tokens for security?
+
+Notes on bcrypt
+
+bcrypt-nodejs documentation [https://www.npmjs.com/package/bcrypt-nodejs] it is being deprecated
+recommendation to use bycrypt-js [https://www.npmjs.com/package/bcryptjs] 
+Install it [npm install bcryptjs]
+Require it
